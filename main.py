@@ -321,9 +321,9 @@ def EvalSquare():
     elif t=='p':
       Put()
     elif t=='~':
-      GetASCII()
+      AskASCII()
     elif t=='&':
-      GetInteger()
+      AskInteger()
     elif t=='@':
       Terminate()
     elif t=='0':
@@ -361,6 +361,6 @@ def EvaluateFile(name):
     u=f.readline()
     temp.append(list(ExtendLine(u[:len(u)-1])))
   program=[[temp[j][i] for j in range(25)] for i in range(80)]
-EvaluateFile("wumpus.txt")
+EvaluateFile("test.txt")
 while True:
   EvalSquare()
