@@ -5,7 +5,9 @@ DOWN = 3
 pos = [0,0]
 vel = RIGHT
 stack = []
-program = [[' ' j for j in range(25)] for i in range(80)]
+program = [[' ' j for j in range(25)] for i in range(80)] #Temporary value
+is_string = False
+
 def MoveDefault():
   if vel == LEFT:
     pos[0]=(pos[0]-1) % 80
@@ -104,4 +106,24 @@ def RandomDirection():
   import random
   u=random.choice([UP,DOWN,LEFT,RIGHT])
   vel=u
+  MoveDefault()
+def HorizontalIf():
+  global vel
+  u=stack.pop()
+  if u == 0:
+    vel = RIGHT
+  else:
+    vel = LEFT
+  MoveDefault()
+def VerticalIf():
+  global vel
+  u=stack.pop()
+  if u == 0:
+    vel = DOWN
+  else:
+    vel = UP
+  MoveDefault()
+def StringMode():
+  global is_string
+  is_string = not is_string
   MoveDefault()
