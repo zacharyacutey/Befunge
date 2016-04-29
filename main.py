@@ -246,7 +246,7 @@ def Put():
     v=stack.pop()
   except:
     v=0
-  program[x][y]=ord(v)
+  program[x][y]=chr(v)
   MoveDefault()
 def AskInteger():
   try:
@@ -313,7 +313,7 @@ def EvalSquare():
     elif t=='.':
       PutInteger()
     elif t==',':
-      PutAscii()
+      PutASCII()
     elif t=='#':
       Bridge()
     elif t=='g':
