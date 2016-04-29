@@ -7,7 +7,6 @@ vel = RIGHT
 stack = []
 program = [[j for j in range(25)] for i in range(80)] #Temporary value
 is_string = False
-
 def MoveDefault():
   if vel == LEFT:
     pos[0]=(pos[0]-1) % 80
@@ -48,41 +47,80 @@ def PushNine():
   stack.append(9)
   MoveDefault()
 def Add():
-  v=stack.pop()
-  u=stack.pop()
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(u+v)
   MoveDefault()
 def Subtract():
-  v=stack.pop()
-  u=stack.pop()
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(u-v)
   MoveDefault()
 def Multiply():
-  v=stack.pop()
-  u=stack.pop()
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(u*v)
   MoveDefault()
 def Divide():
-  v=stack.pop()
-  u=stack.pop()
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   while v == 0:
     v = AskInteger()
   stack.append(int(u/v))
   MoveDefault()
 def Modulo():
-  v=stack.pop()
-  u=stack.pop()
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   while v == 0:
     v = AskInteger()
   stack.append(u%v)
   MoveDefault()
 def Not():
-  u=stack.pop()
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(int(not u))
   MoveDefault()
 def Greater():
-  v=stack.pop()
-  u=stack.pop()
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(u>v)
   MoveDefault()
 def Right():
@@ -109,7 +147,10 @@ def RandomDirection():
   MoveDefault()
 def HorizontalIf():
   global vel
-  u=stack.pop()
+  try:
+    u=stack.pop()
+  except:
+    u=0
   if u == 0:
     vel = RIGHT
   else:
@@ -117,7 +158,10 @@ def HorizontalIf():
   MoveDefault()
 def VerticalIf():
   global vel
-  u=stack.pop()
+  try:
+    u=stack.pop()
+  except:
+    u=0
   if u == 0:
     vel = DOWN
   else:
@@ -128,31 +172,57 @@ def StringMode():
   is_string = not is_string
   MoveDefault()
 def Duplicate():
-  u=stack.pop()
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(u)
   stack.append(u)
   MoveDefault()
 def Swap():
-  u=stack.pop()
-  v=stack.pop()
-  stack.append(u)
+  try:
+    v=stack.pop()
+  except:
+    v=0
+  try:
+    u=stack.pop()
+  except:
+    u=0
   stack.append(v)
+  stack.append(u)
   MoveDefault()
 def Pop():
-  stack.pop()
+  try:
+    r=stack.pop()
+  except:
+    pass
   MoveDefault()
 def PutInteger():
-  print(stack.pop())
+  try:
+    r=stack.pop()
+  except:
+    r=0
+  print(r)
   MoveDefault()
 def PutASCII():
-  print(chr(stack.pop()))
+  try:
+    r=stack.pop()
+  except:
+    r=0
+  print(chr(r))
   MoveDefault()
 def Bridge():
   MoveDefault()
   MoveDefault()
 def Get():
-  y=stack.pop()
-  x=stack.pop()
+  try:
+    y=stack.pop()
+  except:
+    y=0
+  try:
+    x=stack.pop()
+  except:
+    x=0
   if 0 <= y < 25:
     stack.append(0)
     MoveDefault()
@@ -164,9 +234,18 @@ def Get():
   stack.append(ord(program[x][y]))
   MoveDefault()
 def Put():
-  y=stack.pop()
-  x=stack.pop()
-  v=stack.pop()
+  try:
+    y=stack.pop()
+  except:
+    y=0
+  try:
+    x=stack.pop()
+  except:
+    x=0
+  try:
+    v=stack.pop()
+  except:
+    v=0
   program[x][y]=ord(v)
   MoveDefault()
 def AskInteger():
@@ -222,7 +301,7 @@ def EvalSquare():
     elif t=='|':
       VerticalIf()
     elif t=='_':
-      HorizonatlIf()
+      HorizontalIf()
     elif t=='"':
       StringMode()
     elif t==':':
