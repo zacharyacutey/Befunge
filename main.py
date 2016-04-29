@@ -264,6 +264,10 @@ def EvalSquare():
       PushNine()
     else:
       MoveDefault()
+  elif t=='"':
+    StringMode()
+  else:
+    stack.append(ord(t))
 def EvaluateFile(name):
   global program,vel
   f=open(name)
