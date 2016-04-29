@@ -15,7 +15,7 @@ def MoveDefault():
   elif vel == UP:
     pos[1]=(pos[1]-1) % 25
   elif vel == DOWN:
-    pos[1]=(pos[1]-1) % 25
+    pos[1]=(pos[1]+1) % 25
 def PushZero():
   stack.append(0)
   MoveDefault()
@@ -142,7 +142,7 @@ def Down():
 def RandomDirection():
   global vel
   import random
-  u=random.choice([UP,DOWN,LEFT,RIGHT])
+  u=random.randrange(0,5)
   vel=u
   MoveDefault()
 def HorizontalIf():
@@ -354,7 +354,7 @@ def EvalSquare():
     stack.append(ord(t))
     MoveDefault()
 def EvaluateFile(name):
-  global program,vel
+  global program,vel,pos
   f=open(name)
   temp=[]
   for i in range(25):
