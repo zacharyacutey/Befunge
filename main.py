@@ -127,3 +127,55 @@ def StringMode():
   global is_string
   is_string = not is_string
   MoveDefault()
+def Duplicate():
+  u=stack.pop()
+  stack.append(u)
+  stack.append(u)
+def Swap():
+  u=stack.pop()
+  v=stack.pop()
+  stack.append(u)
+  stack.append(v)
+def Pop():
+  stack.pop()
+def PutInteger():
+  print(stack.pop())
+def PutASCII():
+  print(chr(stack.pop()))
+def Bridge():
+  MoveDefault()
+  MoveDefault()
+def Get():
+  y=stack.pop()
+  x=stack.pop()
+  if 0 <= y < 25:
+    stack.append(0)
+    MoveDefault()
+    return
+  if 0 <= x < 80:
+    stack.append(0)
+    MoveDefault()
+    return
+  stack.append(ord(program[x][y]))
+  MoveDefault()
+def Put():
+  y=stack.pop()
+  x=stack.pop()
+  v=stack.pop()
+  program[x][y]=ord(v)
+  MoveDefault()
+def AskInteger():
+  try:
+    i=raw_input
+  except NameError:
+    i=input
+  f = i()
+  stack.append(int(f))
+  MoveDefault()
+def AskASCII():
+  import readchar
+  c=readchar.readchar()
+  stack.append(ord(c))
+  MoveDefault()
+def Terminate():
+  exit()
