@@ -179,3 +179,98 @@ def AskASCII():
   MoveDefault()
 def Terminate():
   exit()
+def ExtendLine(line):
+  if len(line)==80:
+    return line
+  if len(line)<80:
+    return ExtendLine(line+' ')
+  if len(line)>80:
+    return line[0:80]
+def EvalSquare():
+  global vel
+  t=program[pos[0]][pos[1]]
+  if not is_string:
+    if t=='+':
+      Add()
+    elif t=='-':
+      Subtract()
+    elif t=='*':
+      Multiply()
+    elif t=='/':
+      Divide()
+    elif t=='%':
+      Modulo()
+    elif t=='!':
+      Not()
+    elif t=='`':
+      return Greater()
+    elif t=='>':
+      Right()
+    elif t=='<':
+      Left()
+    elif t=='v':
+      Down()
+    elif t=='^':
+      Up()
+    elif t=='?':
+      RandomDirection()
+    elif t=='|':
+      VerticalIf()
+    elif t=='_':
+      HorizonatlIf()
+    elif t=='"':
+      StringMode()
+    elif t==':':
+      Duplicate()
+    elif t=='$':
+      Pop()
+    elif t=='\\':
+      Swap()
+    elif t=='.':
+      PutInteger()
+    elif t==',':
+      PutAscii()
+    elif t=='#':
+      Bridge()
+    elif t=='g':
+      Get()
+    elif t=='p':
+      Put()
+    elif t=='~':
+      GetASCII()
+    elif t=='&':
+      GetInteger()
+    elif t=='@':
+      Terminate()
+    elif t=='0':
+      PushZero()
+    elif t=='1':
+      PushOne()
+    elif t=='2':
+      PushTwo()
+    elif t=='3':
+      PushThree()
+    elif t=='4':
+      PushFour()
+    elif t=='5':
+      PushFive()
+    elif t=='6':
+      PushSix()
+    elif t=='7':
+      PushSeven()
+    elif t=='8':
+      PushEight()
+    elif t=='9':
+      PushNine()
+    else:
+      pass
+def EvaluateFile(name):
+  global program,vel
+  f=open(name)
+  temp=[]
+  for i in range(25):
+    temp.append(ExtendLine(f.readline()))
+  program[[temp[i][j] for j in range(25)] for i in range(80)]
+EvaluateFile("wumpus.txt")
+while True:
+  EvalSquare()
