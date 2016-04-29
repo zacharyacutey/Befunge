@@ -131,17 +131,22 @@ def Duplicate():
   u=stack.pop()
   stack.append(u)
   stack.append(u)
+  MoveDefault()
 def Swap():
   u=stack.pop()
   v=stack.pop()
   stack.append(u)
   stack.append(v)
+  MoveDefault()
 def Pop():
   stack.pop()
+  MoveDefault()
 def PutInteger():
   print(stack.pop())
+  MoveDefault()
 def PutASCII():
   print(chr(stack.pop()))
+  MoveDefault()
 def Bridge():
   MoveDefault()
   MoveDefault()
