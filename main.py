@@ -5,7 +5,7 @@ DOWN = 3
 pos = [0,0]
 vel = RIGHT
 stack = []
-program = [[' ' j for j in range(25)] for i in range(80)] #Temporary value
+program = [[j for j in range(25)] for i in range(80)] #Temporary value
 is_string = False
 
 def MoveDefault():
@@ -263,14 +263,15 @@ def EvalSquare():
     elif t=='9':
       PushNine()
     else:
-      pass
+      MoveDefault()
 def EvaluateFile(name):
   global program,vel
   f=open(name)
   temp=[]
   for i in range(25):
-    temp.append(ExtendLine(f.readline()))
-  program[[temp[i][j] for j in range(25)] for i in range(80)]
+    u=f.readline()
+    temp.append(ExtendLine(u[:len(u)-1]))
+  program=[[temp[i][j] for j in range(25)] for i in range(80)]
 EvaluateFile("wumpus.txt")
 while True:
   EvalSquare()
