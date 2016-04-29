@@ -270,8 +270,8 @@ def EvaluateFile(name):
   temp=[]
   for i in range(25):
     u=f.readline()
-    temp.append(ExtendLine(u[:len(u)-1]))
-  program=[[temp[i][j] for j in range(25)] for i in range(80)]
+    temp.append(list(ExtendLine(u[:len(u)-1])))
+  program=[[temp[j][i] for j in range(25)] for i in range(80)]
 EvaluateFile("wumpus.txt")
 while True:
   EvalSquare()
