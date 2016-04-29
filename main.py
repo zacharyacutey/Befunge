@@ -268,6 +268,7 @@ def EvalSquare():
     StringMode()
   else:
     stack.append(ord(t))
+    MoveDefault()
 def EvaluateFile(name):
   global program,vel
   f=open(name)
