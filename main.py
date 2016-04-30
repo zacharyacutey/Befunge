@@ -364,6 +364,24 @@ def EvaluateFile(name):
       u = '\n'
     temp.append(list(ExtendLine(u[:len(u)-1])))
   program=[[temp[j][i] for j in range(25)] for i in range(80)]
-EvaluateFile("test.txt")
-while True:
+#EvaluateFile("test.txt")
+#while True:
+#  EvalSquare()
+def test():
+  print("pos = "+str(pos))
+  if vel == LEFT:
+    t = "LEFT"
+  elif vel == RIGHT:
+    t = "RIGHT"
+  elif vel == UP:
+    t = "UP"
+  elif vel == DOWN:
+    t = "DOWN"
+  print("vel = "+t)
+  print("stack = "+str(stack))
+  print("Current character = "+str(program[pos[0]][pos[1]])
+def test_eval():
+  test()
   EvalSquare()
+  print("\n\n\n\n\n\n\n\n\n\n")
+  test()
