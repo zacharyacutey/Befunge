@@ -359,6 +359,8 @@ def EvaluateFile(name):
   temp=[]
   for i in range(25):
     u=f.readline()
+    if u == '':
+      u = '\n'
     temp.append(list(ExtendLine(u[:len(u)-1])))
   program=[[temp[j][i] for j in range(25)] for i in range(80)]
 EvaluateFile("test.txt")
