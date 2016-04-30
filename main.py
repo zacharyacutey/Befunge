@@ -121,7 +121,7 @@ def Greater():
     u=stack.pop()
   except:
     u=0
-  stack.append(u>v)
+  stack.append(int(u>v))
   MoveDefault()
 def Right():
   global vel
