@@ -129,7 +129,7 @@ def Right():
   MoveDefault()
 def Left():
   global vel
-  vel = RIGHT
+  vel = LEFT #srsly, that was my mistake. DERP!
   MoveDefault()
 def Up():
   global vel
