@@ -1,3 +1,4 @@
+import sys
 LEFT = 0
 RIGHT = 1
 UP = 2
@@ -202,14 +203,14 @@ def PutInteger():
     r=stack.pop()
   except:
     r=0
-  print(r)
+  sys.stdout.write(r)
   MoveDefault()
 def PutASCII():
   try:
     r=stack.pop()
   except:
     r=0
-  print(chr(r))
+  sys.stdout.write(chr(r))
   MoveDefault()
 def Bridge():
   MoveDefault()
