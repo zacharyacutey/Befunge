@@ -379,7 +379,7 @@ def test():
     t = "DOWN"
   print("vel = "+t)
   print("stack = "+str(stack))
-  print("Current character = "+str(program[pos[0]][pos[1]])
+  print("Current character = "+str(program[pos[0]][pos[1]]))
 def test_eval():
   test()
   EvalSquare()
