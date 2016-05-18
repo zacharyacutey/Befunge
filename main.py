@@ -143,7 +143,7 @@ def Down():
 def RandomDirection():
   global vel
   import random
-  u=random.randrange(0,5)
+  u=random.randrange(0,4) #Cough, IDIOT, Cough
   vel=u
   MoveDefault()
 def HorizontalIf():
