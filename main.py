@@ -1,4 +1,5 @@
 import sys
+term = False
 LEFT = 0
 RIGHT = 1
 UP = 2
@@ -203,7 +204,7 @@ def PutInteger():
     r=stack.pop()
   except:
     r=0
-  sys.stdout.write(r)
+  sys.stdout.write(str(r))
   MoveDefault()
 def PutASCII():
   try:
@@ -263,7 +264,10 @@ def AskASCII():
   stack.append(ord(c))
   MoveDefault()
 def Terminate():
-  exit()
+    global term
+    import sys
+    term = True
+    sys.exit()
 def ExtendLine(line):
   if len(line)==80:
     return line
@@ -364,24 +368,6 @@ def EvaluateFile(name):
       u = '\n'
     temp.append(list(ExtendLine(u[:len(u)-1])))
   program=[[temp[j][i] for j in range(25)] for i in range(80)]
-#EvaluateFile("test.txt")
-#while True:
-#  EvalSquare()
-def test():
-  print("pos = "+str(pos))
-  if vel == LEFT:
-    t = "LEFT"
-  elif vel == RIGHT:
-    t = "RIGHT"
-  elif vel == UP:
-    t = "UP"
-  elif vel == DOWN:
-    t = "DOWN"
-  print("vel = "+t)
-  print("stack = "+str(stack))
-  print("Current character = "+str(program[pos[0]][pos[1]]))
-def test_eval():
-  test()
+EvaluateFile("test.txt")
+while not term:
   EvalSquare()
-  print("\n\n\n\n\n\n\n\n\n\n")
-  test()
