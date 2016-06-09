@@ -1,0 +1,4 @@
+module stack;
+class Stack
+{
+}
