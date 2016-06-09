@@ -1,0 +1,3 @@
+I will not start this project until Monday June 13, because I have things to do for the days and I want a FULL day to work on the project...
+I'll start and finish at midnight, hopefully.
+The Befunge-93 interpreter is/will be written in D.
