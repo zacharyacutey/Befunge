@@ -1,3 +1,3 @@
 # Befunge
 My Implementation of Befunge-93 in D. 
-I'll start on Monday June 9th 2016, midnight, ending on Tuesday June 10th 2016, Midnight
+I'll start when I upload a blank doc and the stack implementation, document when I remove myself from the project, and finish after I've done 24 hours.
