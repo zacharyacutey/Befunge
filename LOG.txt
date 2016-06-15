@@ -1,0 +1,1 @@
+I gave up the D version for the fact that I don't want to go through the struggle of getting a working getch again.
