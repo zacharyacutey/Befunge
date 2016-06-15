@@ -10,4 +10,4 @@ I gave up the D version for the fact that I don't want to go through the struggl
 5:18PM/5:33PM/ ... := 0:15 #Stopped at input and @
 5:45PM/5:50PM/ ... := 0:05 #FINISHED MOST OF IT
 5:55PM/6:08PM/ ... := 0:13 #Internet went down... ugggh
-6:40PM/
+6:40PM/7:21PM/ ... := 0:41 #Wow, that was FAST
