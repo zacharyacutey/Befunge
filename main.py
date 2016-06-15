@@ -5,7 +5,11 @@ RIGHT = 0
 DOWN = 1
 LEFT = 2
 UP = 3
-
+def get_input():
+  try:
+    return raw_input()
+  except:
+    return input()
 class Stack:
   def __init__(self):
     self.value = []
@@ -39,3 +43,16 @@ class Program(Stack):
     a = self.pop()
     b = self.pop()
     self.push(b*a)
+  def Divide(self):
+    a = self.pop()
+    b = self.pop()
+    while a == 0:
+      a = int(get_input())
+    self.push(int(b/a))
+  def Modulo(self):
+    a = self.pop()
+    b = self.pop()
+    while a == 0:
+      a = int(get_input())
+    #NOT SURE WHAT TO DO IF a < 0
+    self.push(b%a)
