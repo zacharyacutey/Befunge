@@ -6,9 +6,6 @@ DOWN = 1
 LEFT = 2
 UP = 3
 
-def cu(n):
-  try:
-    return unicode(
 direction = RIGHT
 string_mode = False
 position = [0,0]
@@ -155,11 +152,20 @@ class Program(Stack):
     if not ((0 <= x < 80) and (0 <= y < 25)):
       self.push(0)
     else:
-      self.push(ord(source[x][y]))
+      self.push(ord(source[x][y])) #Will fail for some unicode characters.
   def Put(self):
     y = self.pop()
     x = self.pop()
     v = self.pop()
     if not ((0 <= x < 80) and (0 <= y < 25)):
       raise "FIX THIS YOU IDIOT!"
-    sourc[x][y] = get_chr(v)
+    source[x][y] = get_chr(v)
+  def AskInt(self):
+    s = int(get_input())
+    self.push(s)
+  def AskAscii(self):
+    s = readchar.readchar()
+    self.push(ord(s)) #Asian people of the world, SORRY
+  def Terminate(self):
+    import sys
+    sys.exit()
