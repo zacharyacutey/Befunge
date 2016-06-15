@@ -5,4 +5,4 @@ FORMAT
 <TIME-BEGAN>/<TIME-ENDED>/<DAY>/<MONTH>/<YEAR>:=<TIME-SPENT>#<COMMENT>
 
 4:25PM/4:28PM/15/6/2016:=0:03#Create `Stack` class
-4:30PM
+4:30PM/4:32/15/6/2016:=0:02#Create `Program` class and direction constants
