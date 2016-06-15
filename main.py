@@ -15,3 +15,6 @@ class Stack:
     return self.value.pop()
   def push(self,value):
     self.value.append(value)
+
+class Program(Stack):
+  pass
