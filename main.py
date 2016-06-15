@@ -17,4 +17,25 @@ class Stack:
     self.value.append(value)
 
 class Program(Stack):
-  pass
+  def PushZero(self): self.push(0)
+  def PushOne(self): self.push(1)
+  def PushTwo(self): self.push(2)
+  def PushThree(self): self.push(3)
+  def PushFour(self): self.push(4)
+  def PushFive(self): self.push(5)
+  def PushSix(self): self.push(6)
+  def PushSeven(self): self.push(7)
+  def PushEight(self): self.push(8)
+  def PushNine(self): self.push(9)
+  def Add(self):
+    a = self.pop()
+    b = self.pop()
+    self.push(b+a)
+  def Subtract(self):
+    a = self.pop()
+    b = self.pop()
+    self.push(b-a)
+  def Multiply(self):
+    a = self.pop()
+    b = self.pop()
+    self.push(b*a)
