@@ -9,7 +9,7 @@ UP = 3
 direction = RIGHT
 string_mode = False
 position = [0,0]
-source = [[" " j for j in range(25)] for i in range(80)]
+source = [[" " for j in range(25)] for i in range(80)]
 def delta(direct):
   if direct == RIGHT:
     return [1,0]
