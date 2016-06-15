@@ -8,3 +8,4 @@ I gave up the D version for the fact that I don't want to go through the struggl
 5:00PM/5:02PM/ ... := 0:02 #Added Logical functions 
 5:04PM/5:15PM/ ... := 0:11 #Added all except # ~ & g p @
 5:18PM/5:33PM/ ... := 0:15 #Stopped at input and @
+5:45PM
