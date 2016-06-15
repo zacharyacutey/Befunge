@@ -4,6 +4,6 @@ FORMAT
 
 <TIME-BEGAN>/<TIME-ENDED>/<DAY>/<MONTH>/<YEAR>:=<TIME-SPENT>#<COMMENT>
 
-4:25PM/4:28PM/15/6/2016:=0:03#Create `Stack` class
-4:30PM/4:32/15/6/2016:=0:02#Create `Program` class and direction constants
-4:40Pm
+4:25PM/4:28PM/15/6/2016:= 0:03 #Create `Stack` class
+4:30PM/4:32PM/ " := #Create `Program` class and direction constants
+4:40PM/4:44PM/ " := 0:04 #Add Arithmetic Functions that don't require asking  AKA 0 1 2 3 4 5 6 7 8 9 + - *
