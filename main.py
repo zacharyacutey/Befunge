@@ -6,9 +6,24 @@ DOWN = 1
 LEFT = 2
 UP = 3
 
+def cu(n):
+  try:
+    return unicode(
 direction = RIGHT
 string_mode = False
-
+position = [0,0]
+source = [[" " j for j in range(25)] for i in range(80)]
+def delta(direct):
+  if direct == RIGHT:
+    return [1,0]
+  elif direct == LEFT:
+    return [-1,0]
+  elif direct == UP:
+    return [0,1]
+  elif direct == DOWN:
+    return [0,-1]
+  else:
+    raise "WTF, GO AND FIX THIS!"
 def get_input():
   try:
     return raw_input()
@@ -129,4 +144,22 @@ class Program(Stack):
     import sys
     a = self.pop()
     sys.stdout.write(get_chr(a))
-  
+  def Bridge(self):
+    global position
+    x = (position[0]+delta(DIRECTION)) % 80
+    y = (position[1]+delta(DIRECTION)) % 25
+    position = [x,y]
+  def Get(self):
+    y = self.pop()
+    x = self.pop()
+    if not ((0 <= x < 80) and (0 <= y < 25)):
+      self.push(0)
+    else:
+      self.push(ord(source[x][y]))
+  def Put(self):
+    y = self.pop()
+    x = self.pop()
+    v = self.pop()
+    if not ((0 <= x < 80) and (0 <= y < 25)):
+      raise "FIX THIS YOU IDIOT!"
+    sourc[x][y] = get_chr(v)
