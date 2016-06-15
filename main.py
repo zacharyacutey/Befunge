@@ -9,7 +9,7 @@ UP = 3
 direction = RIGHT
 string_mode = False
 position = [0,0]
-source = [[" " for j in range(25)] for i in range(80)]
+source = [[" " for j in range(80)] for i in range(25)]
 def delta(direct):
   if direct == RIGHT:
     return [1,0]
@@ -143,8 +143,8 @@ class Program(Stack):
     sys.stdout.write(get_chr(a))
   def Bridge(self):
     global position
-    x = (position[0]+delta(DIRECTION)) % 80
-    y = (position[1]+delta(DIRECTION)) % 25
+    x = (position[0]+delta(direction)[0]) % 80
+    y = (position[1]+delta(direction)[0]) % 25
     position = [x,y]
   def Get(self):
     y = self.pop()
@@ -189,14 +189,16 @@ def read_file(name):
       s.append(make_fit(remove_newline(f.readline())))
     except:
       s.append([" "]*80)
+  f.close()
   source = s
 
 def current_char():
+  print position
   return source[position[0]][position[1]]
 
 def move():
-  position[0]+=delta(direction)[0]
-  position[1]+=delta(direction)[1]
+  position[0]+=delta(direction)[0] % 80
+  position[1]+=delta(direction)[1] % 25
 
 def step():
   global string_mode
