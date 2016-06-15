@@ -56,3 +56,16 @@ class Program(Stack):
       a = int(get_input())
     #NOT SURE WHAT TO DO IF a < 0
     self.push(b%a)
+  def Not(self):
+    a = self.pop()
+    if a == 0:
+      self.push(1)
+    else:
+      self.push(0)
+  def Greater(self):
+    a = self.pop()
+    b = self.pop()
+    if b > a:
+      self.push(1)
+    else:
+      self.push(0)
