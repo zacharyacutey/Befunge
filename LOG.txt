@@ -3,3 +3,5 @@ I gave up the D version for the fact that I don't want to go through the struggl
 FORMAT
 
 <TIME-BEGAN>/<TIME-ENDED>/<DAY>/<MONTH>/<YEAR> := <TIME-SPENT> # <COMMENT>
+
+4:25PM/?????/15/6/2016:=?#
