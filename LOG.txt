@@ -9,3 +9,4 @@ I gave up the D version for the fact that I don't want to go through the struggl
 5:04PM/5:15PM/ ... := 0:11 #Added all except # ~ & g p @
 5:18PM/5:33PM/ ... := 0:15 #Stopped at input and @
 5:45PM/5:50PM/ ... := 0:05 #FINISHED MOST OF IT
+5:55PM
