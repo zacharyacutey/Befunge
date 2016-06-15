@@ -170,6 +170,7 @@ class Program(Stack):
     import sys
     sys.exit()
 
+bf = Program()
 def make_fit(s):
   if len(s) > 80:
     return list(s[0:80])
@@ -189,3 +190,99 @@ def read_file(name):
     except:
       s.append([" "]*80)
   source = s
+
+def current_char():
+  return source[position[0]][position[1]]
+
+def move():
+  position[0]+=delta(direction)[0]
+  position[1]+=delta(direction)[1]
+
+def step():
+  global string_mode
+  if not string_mode:
+    if current_char()=="0":
+      bf.PushZero()
+    elif current_char()=="1":
+      bf.PushOne()
+    elif current_char()=="2":
+      bf.PushTwo()
+    elif current_char()=="3":
+      bf.PushThree()
+    elif current_char()=="4":
+      bf.PushFour()
+    elif current_char()=="5":
+      bf.PushFive()
+    elif current_char()=="6":
+      bf.PushSix()
+    elif current_char()=="7":
+      bf.PushSeven()
+    elif current_char()=="8":
+      bf.PushEight()
+    elif current_char()=="9":
+      bf.PushNine()
+    elif current_char()=="+":
+      bf.Add()
+    elif current_char()=="-":
+      bf.Minus()
+    elif current_char()=="*":
+      bf.Multiply()
+    elif current_char()=="/":
+      bf.Divide()
+    elif current_char()=="%":
+      bf.Modulo()
+    elif current_char()=="!":
+      bf.Not()
+    elif current_char()=="`":
+      bf.Greater()
+    elif current_char()==">":
+      bf.MoveRight()
+    elif current_char()=="<":
+      bf.MoveLeft()
+    elif current_char()=="v":
+      bf.MoveDown()
+    elif current_char()=="^":
+      bf.MoveUp()
+    elif current_char()=="?":
+      bf.Random()
+    elif current_char()=="_":
+      bf.HorizontalIf()
+    elif current_char()=="|":
+      bf.VerticalIf()
+    elif current_char()=='"':
+      string_mode=True
+    elif current_char()==":":
+      bf.Duplicate()
+    elif current_char()=="\\":
+      bf.Swap()
+    elif current_char()=="$":
+      bf.Pop()
+    elif current_char()==".":
+      bf.OutInt()
+    elif current_char()==",":
+      bf.OutAscii()
+    elif current_char()=="#":
+      bf.Bridge()
+    elif current_char()=="g":
+      bf.Get()
+    elif current_char()=="p":
+      bf.Put()
+    elif current_char()=="@":
+      bf.Terminate() #I'll be back!
+    elif current_char()=="&":
+      bf.AskInt()
+    elif current_char()=="~":
+      bf.AskAscii()
+    else:
+      1 + 1 == 2 # Duh! Not sure if a pass statement could go here
+  else:
+    if current_char()=='"':
+      string_mode = False
+    bf.push(ord(current_char()))
+  bf.Bridge()
+def main_loop(program_name):
+  global source
+  read_file(program_name)
+  while True:
+    step()
+main_loop("test.txt")
