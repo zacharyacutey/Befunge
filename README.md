@@ -1,2 +1,2 @@
 # Befunge
-I will announce when I get any progress.
+I gave up a D version for one reason: NO WORKING GETCH! UGGH!
