@@ -1,5 +1,11 @@
 #Starting over, but in python, must install readchar for this to work!!!
 import readchar
+
+RIGHT = 0
+DOWN = 1
+LEFT = 2
+UP = 3
+
 class Stack:
   def __init__(self):
     self.value = []
