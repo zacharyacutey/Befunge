@@ -5,11 +5,21 @@ RIGHT = 0
 DOWN = 1
 LEFT = 2
 UP = 3
+
+direction = RIGHT
+string_mode = False
+
 def get_input():
   try:
     return raw_input()
   except:
     return input()
+
+def get_chr(i):
+  try:
+    return unichr(i)
+  except:
+    return chr(i)
 class Stack:
   def __init__(self):
     self.value = []
@@ -69,3 +79,54 @@ class Program(Stack):
       self.push(1)
     else:
       self.push(0)
+  def MoveLeft(self):
+    global direction
+    direction = LEFT
+  def MoveRight(self):
+    global direction
+    direction = RIGHT
+  def MoveUp(self):
+    global direction
+    direction = UP
+  def MoveDown(self):
+    global direction
+    direction = DOWN
+  def MoveRandom(self):
+    global direction
+    import random
+    direction = random.choice([LEFT,RIGHT,UP,DOWN])
+  def HorizontalIf(self):
+    a = self.pop()
+    if a == 0:
+      self.MoveRight()
+    else:
+      self.MoveLeft()
+  def VerticalIf(self):
+    a = self.pop()
+    if a == 0:
+      self.MoveDown()
+    else:
+      self.MoveUp()
+  def StringMode(self):
+    global string_mode
+    string_mode = 2
+  def Duplicate(self):
+    a = self.pop()
+    self.push(a)
+    self.push(a)
+  def Swap(self):
+    a = self.pop()
+    b = self.pop()
+    self.push(a)
+    self.push(b)
+  def Pop(self):
+    self.pop()
+  def OutInt(self):
+    import sys
+    a = self.pop()
+    sys.stdout.write(a)
+  def OutAscii(self):
+    import sys
+    a = self.pop()
+    sys.stdout.write(get_chr(a))
+  
