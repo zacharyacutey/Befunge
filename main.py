@@ -169,3 +169,23 @@ class Program(Stack):
   def Terminate(self):
     import sys
     sys.exit()
+
+def make_fit(s):
+  if len(s) > 80:
+    return list(s[0:80])
+  elif len(s) < 80:
+    return make_fit(s+" ")
+  else:
+    return make_fit(s)
+def remove_newline(s):
+  return s[:-1]
+def read_file(name):
+  global source
+  s = []
+  f = open(name,"r")
+  for dummy_i in range(25):
+    try:
+      s.append(make_fit(remove_newline(f.readline())))
+    except:
+      s.append([" "]*80)
+  source = s
