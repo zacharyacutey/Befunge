@@ -1,7 +1,11 @@
 import readchar
 
 UNIT_TEST_MODE = True
-
+LEFT = 0
+RIGHT = 1
+UP = 2
+DOWN = 3
+source = [[[" "]*80]]]*25
 class Stack:
   def __init__(self):
     self.value = []
@@ -25,16 +29,30 @@ if UNIT_TEST_MODE:
   assert(f.pop() == 2)
   assert(f.value == [])
   assert(f.pop() == 0)
-  
-def toCharCode(i):
-  try:
-    return unichr(i)
-  except:
-    return chr(i)
 
 def readln():
   try:
     return raw_input()
   except:
     return input()
-    
+
+def remove_newline(s):
+  return s[:-1]
+
+def fit(s):
+  if len(s)>80:
+    return list(s[0:80])
+  elif len(s)==80:
+    return list(s)
+  else:
+    return list(s) + [" "]*(80 - len(s))
+
+def read_file(name):
+  f = open(name,"r")
+  i = 0
+  while i != 25:
+    source[i] = fit(remove_newline(f.readline()))
+    i += 1
+  f.close()
+if UNIT_TEST_MODE:
+  read_file("test.txt")
