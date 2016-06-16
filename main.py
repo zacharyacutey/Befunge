@@ -26,3 +26,15 @@ if UNIT_TEST_MODE:
   assert(f.value == [])
   assert(f.pop() == 0)
   
+def toCharCode(i):
+  try:
+    return unichr(i)
+  except:
+    return chr(i)
+
+def readln():
+  try:
+    return raw_input()
+  except:
+    return input()
+    
