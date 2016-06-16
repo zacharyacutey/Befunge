@@ -1,4 +1,3 @@
-#Starting over, but in python, must install readchar for this to work!!!
 import readchar
 
 RIGHT = 0
@@ -76,7 +75,6 @@ class Program(Stack):
     b = self.pop()
     while a == 0:
       a = int(get_input())
-    #NOT SURE WHAT TO DO IF a < 0
     self.push(b%a)
   def Not(self):
     a = self.pop()
@@ -143,8 +141,10 @@ class Program(Stack):
     sys.stdout.write(get_chr(a))
   def Bridge(self):
     global position
-    x = (position[0]+delta(direction)[0]) % 80
-    y = (position[1]+delta(direction)[0]) % 25
+    x = (position[0]+delta(direction)[0])
+    x %= 80
+    y = (position[1]+delta(direction)[0])
+    y %= 25
     position = [x,y]
   def Get(self):
     y = self.pop()
@@ -152,7 +152,7 @@ class Program(Stack):
     if not ((0 <= x < 80) and (0 <= y < 25)):
       self.push(0)
     else:
-      self.push(ord(source[x][y])) #Will fail for some unicode characters.
+      self.push(ord(source[x][y]))
   def Put(self):
     y = self.pop()
     x = self.pop()
@@ -165,7 +165,7 @@ class Program(Stack):
     self.push(s)
   def AskAscii(self):
     s = readchar.readchar()
-    self.push(ord(s)) #Asian people of the world, SORRY
+    self.push(ord(s))
   def Terminate(self):
     import sys
     sys.exit()
@@ -193,7 +193,6 @@ def read_file(name):
   source = s
 
 def current_char():
-  print position
   return source[position[0]][position[1]]
 
 def move():
@@ -270,13 +269,13 @@ def step():
     elif current_char()=="p":
       bf.Put()
     elif current_char()=="@":
-      bf.Terminate() #I'll be back!
+      bf.Terminate()
     elif current_char()=="&":
       bf.AskInt()
     elif current_char()=="~":
       bf.AskAscii()
     else:
-      1 + 1 == 2 # Duh! Not sure if a pass statement could go here
+      1 + 1 == 2
   else:
     if current_char()=='"':
       string_mode = False
@@ -287,4 +286,4 @@ def main_loop(program_name):
   read_file(program_name)
   while True:
     step()
-main_loop("test.txt")
+#main_loop("test.txt")
