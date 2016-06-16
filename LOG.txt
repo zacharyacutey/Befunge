@@ -11,3 +11,4 @@ I gave up the D version for the fact that I don't want to go through the struggl
 5:45PM/5:50PM/ ... := 0:05 #FINISHED MOST OF IT
 5:55PM/6:08PM/ ... := 0:13 #Internet went down... ugggh
 6:40PM/7:30PM/ ... := 0:50 #Bug fixing, I can't find my error
+10:20PM/10:22PM/ ... := 0:02 #No more errors! Still have to debug silent bugs ;(
