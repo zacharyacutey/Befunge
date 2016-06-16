@@ -1,14 +1,4 @@
 I gave up the D version for the fact that I don't want to go through the struggle of getting a working getch again.
 (All times are in Eastern Standard Time)
 
-4:25PM/4:28PM/15/6/2016:= 0:03 #Create `Stack` class
-4:30PM/4:32PM/ ... := 0:02 #Create `Program` class and direction constants
-4:40PM/4:44PM/ ... := 0:04 #Add Arithmetic Functions that don't require asking  AKA 0 1 2 3 4 5 6 7 8 9 + - *
-4:44PM/4:58PM/ ... := 0:14 #AHHH, I FORGOT TO RECORD THE START TIME, Added / and %
-5:00PM/5:02PM/ ... := 0:02 #Added Logical functions 
-5:04PM/5:15PM/ ... := 0:11 #Added all except # ~ & g p @
-5:18PM/5:33PM/ ... := 0:15 #Stopped at input and @
-5:45PM/5:50PM/ ... := 0:05 #FINISHED MOST OF IT
-5:55PM/6:08PM/ ... := 0:13 #Internet went down... ugggh
-6:40PM/7:30PM/ ... := 0:50 #Bug fixing, I can't find my error
-10:20PM/10:22PM/ ... := 0:02 #No more errors! Still have to debug silent bugs ;(
+This time, I AM DOING UNITTESTS! UGGGHHH!
